@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="250dp"
+    android:layout_height="250dp"
+    android:background="@android:color/background_light">
+
+
+<ImageView
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:id="@+id/imageView2"
+    android:src="@drawable/pop2"
+    android:layout_gravity="center_horizontal"
+    />
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textAppearance="?android:attr/textAppearanceSmall"
+android:text="INTRODUCE TO A FRIEND"
+android:id="@+id/textView2"
+android:layout_gravity="center_horizontal" />
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textAppearance="?android:attr/textAppearanceSmall"
+android:text="NAME"
+android:id="@+id/textView3"
+android:layout_gravity="center_horizontal" />
+
+<EditText
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/editText"
+android:layout_gravity="center_horizontal" />
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textAppearance="?android:attr/textAppearanceSmall"
+android:text="Phone"
+android:id="@+id/textView4"
+android:layout_gravity="center_horizontal" />
+
+<EditText
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/editText2"
+android:layout_gravity="center_horizontal" />
+
+<ImageButton
+android:layout_width="130dp"
+android:layout_height="60dp"
+android:scaleType="fitXY"
+android:id="@+id/imageButton"
+android:src="@drawable/sendbutton"
+android:layout_gravity="center_horizontal" />
+    </LinearLayout>
