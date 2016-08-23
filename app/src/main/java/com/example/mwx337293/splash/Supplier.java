@@ -1,8 +1,6 @@
 package com.example.mwx337293.splash;
 
-import android.app.Dialog;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,63 +15,36 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ListView;
 
-public class Home extends AppCompatActivity
+public class Supplier extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-        ListView listView;
-    ImageButton deals,profile,search;
-    String[] values = new String[] { "Android List View",
-            "Adapter implementation",
-            "Simple List View In Android",
+ListView listView;
+    String[] values = new String[] { "Android ",
+            "Android",
+            "Android",
 
     };
 
-    int[] images = new int[]{R.drawable.beverages,R.drawable.food,R.drawable.specialityproducts};
+    int[] images = new int[]{R.drawable.ic_launcher,R.drawable.ic_launcher,R.drawable.ic_launcher};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home2);
+        setContentView(R.layout.activity_supplier);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        listView=(ListView)findViewById(R.id.listView);
+        listView=(ListView)findViewById(R.id.listView4);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, values);
-        listView.setAdapter(new CustomList(getApplication(),values,images));
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent in = new Intent(Home.this,Supplier.class);
-                startActivity(in);
-            }
-        });
-        search=(ImageButton)findViewById(R.id.search);
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in = new Intent(Home.this,Search.class);
-                startActivity(in);
-            }
-        });
-        profile=(ImageButton)findViewById(R.id.profile);
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in = new Intent(Home.this,Profile.class);
-                startActivity(in);
-            }
-        });
-        deals=(ImageButton)findViewById(R.id.deals);
-        deals.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in = new Intent(Home.this,Deals.class);
-                startActivity(in);
-            }
-        });
+        listView.setAdapter(new CustomList4(getApplication(),values,images));
+listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Intent in = new Intent(Supplier.this,Compare.class);
+        startActivity(in);
+    }
+});
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -97,7 +68,7 @@ public class Home extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
+        getMenuInflater().inflate(R.menu.supplier, menu);
         return true;
     }
 
@@ -110,10 +81,6 @@ public class Home extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            final Dialog dialog = new Dialog(this);
-            dialog.setContentView(R.layout.dialoge);
-            dialog.show();
-
             return true;
         }
 
